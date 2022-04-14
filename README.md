@@ -3,9 +3,11 @@
 
 # Udacity Github Version Control Project
 
-This is an interactive command line data analysis tool.
+This project is an interactive command line data analysis tool for analysing bikeshare data.
 
-The user is prompted to select some filters, and the tool returns a summary of the filtered data.
+The user is prompted to select some filters (city/day/month), and the tool returns a summary of the filtered data.
+
+It also has an additional option for displaying the filtered/total data 5 lines at a time.
 
 This repo is for demonstrating use of version control, rather than the code itself.
 
