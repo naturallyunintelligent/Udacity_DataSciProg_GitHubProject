@@ -17,6 +17,8 @@ src/constants.py
 # Credits
 The following are all resources to which I referred during the course of completing the project.
 
+[Udacity - git commit style guide](https://udacity.github.io/git-styleguide/)
+
 [Stack Overflow - User Input](https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
 
 ## Date & Time:
