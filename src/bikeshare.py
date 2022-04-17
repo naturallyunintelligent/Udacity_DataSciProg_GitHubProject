@@ -180,6 +180,10 @@ def get_day() -> (int, str):
         (int) day_number: an integer to represent the day of the week
         (str) day_name: the chosen day of the week
     """
+    
+    day_error_string = "Please enter a day of the week in English, \n "
+    "e.g. Monday"
+
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         try:
@@ -191,24 +195,20 @@ def get_day() -> (int, str):
                 break
             else:
                 print(
-                    "Apologies, not understood. "
-                    "Please enter a day of the week in English, \n "
-                    "e.g. Monday"
+                    "Apologies, not understood. \n",
+                    day_error_string
                 )
                 continue
         except TypeError:
             print(
-                "TypeError... "
-                "Apologies, not understood. "
-                "Please enter a day of the week in English, \n "
-                "e.g. Monday"
+                "TypeError... \n", 
+                day_error_string
             )
             continue
         except ValueError:
             print(
-                "ValueError... "
-                "Please enter a day of the week in English, \n "
-                "e.g. Monday"
+                "ValueError... \n",
+                day_error_string
             )
             continue
         except KeyboardInterrupt:
