@@ -5,6 +5,9 @@ import pandas as pd
 
 from constants import CITY_DATA, DATAPATH, MONTHNAMES, WEEKDAYS, TYPOS
 
+def print_error_message(message):
+    print(f"Error: {message}")
+
 
 def greeting() -> None:
     """
@@ -50,6 +53,8 @@ def get_city() -> str:
     while True:
         # check available data
         available_cities = [city for city in CITY_DATA.keys()]
+        city_error_message = f"Apologies, I didn't understand that. \n"
+        f"Data currently available for {available_cities,}"
         try:
             # user selects a city from a list based on the data dict
             # in constants.py
@@ -87,16 +92,10 @@ def get_city() -> str:
                 )
                 continue
         except ValueError:
-            print(
-                f"Apologies, I didn't understand that. "
-                f"Data currently available for {available_cities,}"
-            )
+            print_error_message(city_error_message)
             continue
         except TypeError:
-            print(
-                f"Apologies, I didn't understand that. "
-                f"Data currently available for {available_cities,}"
-            )
+            print_error_message(city_error_message)
             continue
         except KeyboardInterrupt:
             print("Keyboard Interrupt... Exiting.")
