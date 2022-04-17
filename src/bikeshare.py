@@ -3,7 +3,7 @@ import datetime
 
 import pandas as pd
 
-from constants import CITY_DATA, DATAPATH, MONTHNAMES, WEEKDAYS
+from constants import CITY_DATA, DATAPATH, MONTHNAMES, WEEKDAYS, TYPOS
 
 
 def greeting() -> None:
@@ -62,25 +62,11 @@ def get_city() -> str:
             )
             # use a general tidy function to remove common input issues
             city = tidy_input(city)
-            # typos - presumed to be a valid choice that has been mis-spelt
-            typos = {
-                "chicgo": "chicago",
-                "chiago": "chicago",
-                "chacago": "chicago",
-                "chicargo": "chicago",
-                "new york": "new york city",
-                "nyc": "new york city",
-                "newyorkcity": "new york city",
-                "newyork": "new york city",
-                "ny city": "new york city",
-                "nycity": "new york city",
-                "wash": "washington",
-            }
 
             # translate from typo to valid entry if applicable
-            if city in typos.keys():
-                print(f"City identified: {city} >>> {typos[city].title()}")
-                city = typos[city]
+            if city in TYPOS.keys():
+                print(f"City identified: {city} >>> {TYPOS[city].title()}")
+                city = TYPOS[city]
             # check for user input city in the list of available data
             if city not in available_cities:
                 # check against abbreviated city names to handle various typos
